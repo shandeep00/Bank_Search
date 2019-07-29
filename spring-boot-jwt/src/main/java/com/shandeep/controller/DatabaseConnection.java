@@ -43,15 +43,18 @@ public class DatabaseConnection
 		}
 		return branch;
 	}
-	public List<Branch> getBranchNameandCity(String name,String city)
+	public List<Branch> getBranchNameandCity(String name,String city,int limit,int offset)
 	{
+		
 
 		List<Branch> branchlist = new ArrayList();
 		try (Connection connection = DriverManager.getConnection(url,username,password)) {
 			
-			PreparedStatement statement1 = connection.prepareStatement("SELECT * FROM branches where bank_id IN (SELECT id from banks where name = ?) AND city = ?");
+			PreparedStatement statement1 = connection.prepareStatement("SELECT * FROM branches where bank_id IN (SELECT id from banks where name = ?) AND city = ? OFFSET ? LIMIT ?");
 			statement1.setString(1,name);
 			statement1.setString(2,city);
+			statement1.setInt(3,offset);
+			statement1.setInt(4,limit);
 			ResultSet resultSet1 = statement1.executeQuery();
 			while (resultSet1.next()) {
 				Branch branch = new Branch();
