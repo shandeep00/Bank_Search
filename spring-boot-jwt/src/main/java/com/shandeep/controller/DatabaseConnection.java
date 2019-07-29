@@ -19,14 +19,12 @@ public class DatabaseConnection
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
         String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath() + "?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-		System.out.println(dbUrl + " "+ username + " "+password);
         return DriverManager.getConnection(dbUrl, username, password);
     }
 	public Branch getBranchIFSC(String ifsc) throws Exception
 	{
 		Branch branch = new Branch();
 		try (Connection connection = getConnection()) {
-			System.out.println("Connected to DB!!");
 			PreparedStatement statement1 = connection.prepareStatement("SELECT * FROM branches where ifsc = ?");
 			statement1.setString(1,ifsc);
 			ResultSet resultSet1 = statement1.executeQuery();
