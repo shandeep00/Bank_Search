@@ -2,6 +2,6 @@
 curl -X POST -H "Content-type:application/json" -d "{\"username\":\"banksearch\" ,\"password\":\"password\"}" https://spring-jwt-boot.herokuapp.com/authenticate
 
 --Use the token from above to call a GET request
-curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYW5rc2VhcmNoIiwiZXhwIjoxNTY0ODUxNDM5LCJpYXQiOjE1NjQ0MTk0Mzl9.esEn7jL7skSz3kyNSrig7OYlJxy7Uq4aLrEajseXU70ZcTqa5lib1z7YyGGMpx7KWPMExhVVWEnPE9nNNYd3TQ" "https://spring-jwt-boot.herokuapp.com/getBranchByIfsc?ifsc=ALLA0210692"
+curl -k -X GET -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYW5rc2VhcmNoIiwiZXhwIjoxNTY0ODUxNDM5LCJpYXQiOjE1NjQ0MTk0Mzl9.esEn7jL7skSz3kyNSrig7OYlJxy7Uq4aLrEajseXU70ZcTqa5lib1z7YyGGMpx7KWPMExhVVWEnPE9nNNYd3TQ" "https://spring-jwt-boot.herokuapp.com/getBranchByIfsc?ifsc=ALLA0210692"
 
-curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYW5rc2VhcmNoIiwiZXhwIjoxNTY0ODUxNDM5LCJpYXQiOjE1NjQ0MTk0Mzl9.esEn7jL7skSz3kyNSrig7OYlJxy7Uq4aLrEajseXU70ZcTqa5lib1z7YyGGMpx7KWPMExhVVWEnPE9nNNYd3TQ" "https://spring-jwt-boot.herokuapp.com/getBranchesByNameAndCity?name=ALLAHABAD%20BANK&city=MUMBAI&limit=5&offset=10"
+curl -k -X GET -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYW5rc2VhcmNoIiwiZXhwIjoxNTY0ODUxNDM5LCJpYXQiOjE1NjQ0MTk0Mzl9.esEn7jL7skSz3kyNSrig7OYlJxy7Uq4aLrEajseXU70ZcTqa5lib1z7YyGGMpx7KWPMExhVVWEnPE9nNNYd3TQ" "https://spring-jwt-boot.herokuapp.com/getBranchesByNameAndCity?name=ALLAHABAD%20BANK&city=MUMBAI&limit=5&offset=10"
