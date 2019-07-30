@@ -59,8 +59,6 @@ public class DatabaseConnection
 	}
 	public List<Branch> getBranchNameandCity(String name,String city,int limit,int offset) throws Exception
 	{
-		
-
 		List<Branch> branchlist = new ArrayList();
 		try	{
 			if(connection == null)
